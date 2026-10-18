@@ -1,0 +1,10 @@
+// Cloudflare Workers config: serves this folder as a static site (no build step, no server code).
+{
+  "name": "ikram-portfolio",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": true
+}
