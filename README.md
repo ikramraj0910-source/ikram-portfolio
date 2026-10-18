@@ -39,9 +39,9 @@ Any static host works; there is no build step.
 - **GitHub Pages:** push the folder contents to a repo, then Settings → Pages → deploy from branch.
 
 Live at https://ikram-portfolio.ikramraj0910.workers.dev (Cloudflare Workers, static assets via `wrangler.jsonc`).
-If you move to a custom domain, replace that address in the canonical, `og:url`, `og:image`,
-(e.g. `https://yourdomain.com/assets/img/og-image.jpg`) and add
-`<link rel="canonical" href="https://yourdomain.com/">` — social networks need absolute image URLs.
+If you move to a custom domain, replace that address everywhere it appears in `index.html`
+(canonical, `og:url`, `og:image`, `twitter:image`, JSON-LD), `robots.txt` and `sitemap.xml`.
+Social networks need absolute image URLs.
 
 ## Contact form
 
