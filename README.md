@@ -2,7 +2,7 @@
 
 A static, dependency-free executive portfolio (HTML, CSS and one vanilla JS file, no build step).
 
-Design: midnight and ivory bands, Bodoni Moda display type with Instrument Sans, champagne accents.
+Design: midnight and ivory bands, Bodoni Moda display type with Instrument Sans, icy blue and teal accents.
 The opening visual is a canvas-drawn "growth lattice": scattered points assemble into a grid of
 columns rising toward one corner. It pauses when off-screen, renders as a still frame for visitors
 who prefer reduced motion, and the page works fully without it (or without JavaScript).

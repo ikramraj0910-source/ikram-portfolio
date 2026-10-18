@@ -129,7 +129,7 @@
           var ed = edges[k], a = nodes[ed[0]], b = nodes[ed[1]];
           var depth = clamp(0.75 - (a.pz + b.pz) / (4 * N), 0.25, 1);
           var alpha = settle * depth * (ed[2] === 2 ? 0.75 : ed[2] === 1 ? 0.28 : 0.16) * Math.min(a.p, b.p);
-          ctx.strokeStyle = ed[2] === 2 ? "rgba(194,171,130," + alpha.toFixed(3) + ")" : "rgba(160,170,186," + alpha.toFixed(3) + ")";
+          ctx.strokeStyle = ed[2] === 2 ? "rgba(168,216,240," + (alpha * 0.9).toFixed(3) + ")" : "rgba(150,166,190," + alpha.toFixed(3) + ")";
           ctx.beginPath(); ctx.moveTo(a.px, a.py); ctx.lineTo(b.px, b.py); ctx.stroke();
         }
       }
@@ -140,7 +140,7 @@
         var dz = clamp(0.8 - o.pz / (2.5 * N), 0.3, 1);
         var r = (o.top ? 2.1 : 1.3) * (0.7 + dz * 0.5);
         var al = (0.25 + 0.75 * o.p) * dz * (o.top ? 1 : 0.55);
-        ctx.fillStyle = o.top ? "rgba(214,194,156," + al.toFixed(3) + ")" : "rgba(196,203,214," + al.toFixed(3) + ")";
+        ctx.fillStyle = o.top ? "rgba(196,232,248," + al.toFixed(3) + ")" : "rgba(190,202,218," + al.toFixed(3) + ")";
         ctx.beginPath(); ctx.arc(o.px, o.py, r, 0, Math.PI * 2); ctx.fill();
       }
 
@@ -153,13 +153,13 @@
           var A = nodes[diag[seg]], B = nodes[diag[Math.min(seg + 1, diag.length - 1)]];
           var gx = A.px + (B.px - A.px) * fr, gy = A.py + (B.py - A.py) * fr;
           var glow = ctx.createRadialGradient(gx, gy, 0, gx, gy, 18);
-          glow.addColorStop(0, "rgba(232,214,178,.85)"); glow.addColorStop(1, "rgba(232,214,178,0)");
+          glow.addColorStop(0, "rgba(140,220,218,.75)"); glow.addColorStop(1, "rgba(99,199,197,0)");
           ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(gx, gy, 18, 0, Math.PI * 2); ctx.fill();
         }
         // the peak: one quiet marker on the highest column
         var peak = nodes[diag[diag.length - 1]];
         var pulse = still ? 0.5 : (Math.sin(t * 1.4) + 1) / 2;
-        ctx.strokeStyle = "rgba(194,171,130," + (0.25 + pulse * 0.35).toFixed(3) + ")";
+        ctx.strokeStyle = "rgba(99,199,197," + (0.25 + pulse * 0.35).toFixed(3) + ")";
         ctx.beginPath(); ctx.arc(peak.px, peak.py, 7 + pulse * 3, 0, Math.PI * 2); ctx.stroke();
       }
     }
