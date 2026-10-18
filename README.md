@@ -1,13 +1,18 @@
 # Ikram Ullah — Personal Portfolio
 
-A static, dependency-free personal website (HTML, CSS and a small vanilla JS file).
+A static, dependency-free executive portfolio (HTML, CSS and one vanilla JS file, no build step).
+
+Design: midnight and ivory bands, Bodoni Moda display type with Instrument Sans, champagne accents.
+The opening visual is a canvas-drawn "growth lattice": scattered points assemble into a grid of
+columns rising toward one corner. It pauses when off-screen, renders as a still frame for visitors
+who prefer reduced motion, and the page works fully without it (or without JavaScript).
 
 ## Structure
 
 ```
 index.html          All page content and metadata (SEO, Open Graph, JSON-LD)
 styles.css          Design system (colour/type/space tokens, light + dark themes) and layout
-script.js           Mobile menu, active-section nav, case-study dialog, copy-email button
+script.js           Lattice animation, scroll reveals, header behaviour, menu, case-study accordion, copy buttons
 favicon.svg         Monogram favicon
 assets/img/         Optimised portrait (WebP + JPEG), social share image, touch icon
 assets/certificates/ Certificate images used as evidence in the case studies
@@ -27,6 +32,8 @@ Opening `index.html` directly in a browser also works.
 
 Any static host works; there is no build step.
 
+- **Cloudflare Pages (recommended, free):** Workers & Pages → Create → Pages → upload the folder
+  (or connect a Git repo with no build command and output directory `/`).
 - **Netlify:** drag the `portfolio` folder onto app.netlify.com/drop.
 - **Vercel:** `npx vercel` inside the folder (framework preset: "Other").
 - **GitHub Pages:** push the folder contents to a repo, then Settings → Pages → deploy from branch.
@@ -48,7 +55,6 @@ No API keys are required in the frontend for either option.
 ## Updating content
 
 - New roles: copy an `<li class="role">` block in the Experience section.
-- New projects: add a card in `.cards` with `data-case="case-xyz"` and a matching
-  `<article class="case" id="case-xyz">` inside `#case-library`.
+- New case studies: copy an `<li class="case">` block in `.cases`, giving the button and panel new ids.
 - The "Next builds" list in the Python case study is labelled *Planned*; replace it with real
   projects (and a GitHub link) as you complete them.
