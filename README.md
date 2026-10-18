@@ -38,7 +38,8 @@ Any static host works; there is no build step.
 - **Vercel:** `npx vercel` inside the folder (framework preset: "Other").
 - **GitHub Pages:** push the folder contents to a repo, then Settings → Pages → deploy from branch.
 
-After you have a domain, update `og:image` and `twitter:image` in `index.html` to the absolute URL
+Live at https://ikram-portfolio.ikramraj0910.workers.dev (Cloudflare Workers, static assets via `wrangler.jsonc`).
+If you move to a custom domain, replace that address in the canonical, `og:url`, `og:image`,
 (e.g. `https://yourdomain.com/assets/img/og-image.jpg`) and add
 `<link rel="canonical" href="https://yourdomain.com/">` — social networks need absolute image URLs.
 

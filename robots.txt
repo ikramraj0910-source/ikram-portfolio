@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ikram-portfolio.ikramraj0910.workers.dev/sitemap.xml
